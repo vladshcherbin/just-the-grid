@@ -1,0 +1,13 @@
+$screen-sm-min: 768px !default;
+$screen-md-min: 992px !default;
+$screen-lg-min: 1200px !default;
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+$container-sm: (720px + $grid-gutter-width) !default;
+$container-md: (940px + $grid-gutter-width) !default;
+$container-lg: (1140px + $grid-gutter-width) !default;

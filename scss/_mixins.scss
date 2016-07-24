@@ -1,0 +1,144 @@
+// Rows
+//
+// Alignment
+@mixin row-alignment($className) {
+  // Main axis
+  @if ($className != "xs") {
+    &.start-#{$className} {
+      justify-content: flex-start;
+    }
+  }
+  &.center-#{$className} {
+    justify-content: center;
+  }
+  &.end-#{$className} {
+    justify-content: flex-end;
+  }
+  &.around-#{$className} {
+    justify-content: space-around;
+  }
+  &.between-#{$className} {
+    justify-content: space-between;
+  }
+
+  // Cross axis
+  @if ($className != "xs") {
+    &.stretch-#{$className} {
+      align-items: stretch;
+    }
+  }
+  &.baseline-#{$className} {
+    align-items: baseline;
+  }
+  &.top-#{$className} {
+    align-items: flex-start;
+  }
+  &.middle-#{$className} {
+    align-items: center;
+  }
+  &.bottom-#{$className} {
+    align-items: flex-end;
+  }
+}
+// Direction
+@mixin row-direction($className) {
+  @if ($className != "xs") {
+    &.row-#{$className} {
+      flex-direction: row;
+    }
+  }
+  &.row-reverse-#{$className} {
+    flex-direction: row-reverse;
+  }
+  &.column-#{$className} {
+    flex-direction: column;
+  }
+  &.column-reverse-#{$className} {
+    flex-direction: column-reverse;
+  }
+}
+
+// Columns
+//
+// Width
+@mixin columns-width($className) {
+  @for $i from 1 through 12 {
+    .col-#{$className}-#{$i} {
+      flex-basis: percentage($i / $grid-columns);
+      max-width: percentage($i / $grid-columns);
+    }
+  }
+}
+// Offset
+@mixin columns-offset($className) {
+  @for $i from 0 through 11 {
+    @if ($className != "xs" or $i != 0) {
+      .col-#{$className}-offset-#{$i} {
+        margin-left: percentage($i / $grid-columns);
+      }
+    }
+  }
+}
+// Order
+@mixin columns-order($className) {
+  &.first-#{$className} {
+    order: -1;
+  }
+  &.last-#{$className} {
+    order: -1;
+  }
+}
+// Visibility
+@mixin columns-hidden($className) {
+  &.hidden-#{$className} {
+    display: none;
+  }
+}
+// Generate columns
+@mixin generate-columns {
+  $list: '.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1';
+
+  @for $i from 2 through $grid-columns {
+    $list: '#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}';
+  }
+
+  #{$list} {
+    flex: 0 0 auto;
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+    box-sizing: border-box;
+  }
+
+  @include columns-width("xs");
+  @include columns-offset("xs");
+  @include columns-order("xs");
+  @include columns-hidden("xs-up");
+
+  @media (max-width: $screen-xs-max) {
+    @include columns-hidden('xs');
+  }
+  @media (min-width: $screen-sm-min) {
+    @include columns-width("sm");
+    @include columns-offset("sm");
+    @include columns-order("sm");
+    @include columns-hidden("sm-up");
+  }
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @include columns-hidden('sm');
+  }
+  @media (min-width: $screen-md-min) {
+    @include columns-width("md");
+    @include columns-offset("md");
+    @include columns-order("md");
+    @include columns-hidden("md-up");
+  }
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @include columns-hidden('md');
+  }
+  @media (min-width: $screen-lg-min) {
+    @include columns-width("lg");
+    @include columns-offset("lg");
+    @include columns-order("lg");
+    @include columns-hidden("lg");
+  }
+}
