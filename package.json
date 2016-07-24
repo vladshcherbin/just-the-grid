@@ -1,0 +1,14 @@
+{
+  "name": "just-the-grid",
+  "version": "1.0.0",
+  "author": "Vlad Shcherbin <vlad.shcherbin@gmail.com>",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-size": "^2.1.0"
+  },
+  "license": "MIT"
+}
