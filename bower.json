@@ -1,0 +1,27 @@
+{
+  "name": "just-the-grid",
+  "version": "1.0.0",
+  "description": "Just a handy flex grid to build any layout you want.",
+  "homepage": "https://just-the-grid.xyz",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/VladShcherbin/just-the-grid.git"
+  },
+  "main": "dist/just-the-grid.min.css",
+  "authors": [
+    "Vlad Shcherbin <vlad.shcherbin@gmail.com>"
+  ],
+  "keywords": [
+    "just-the-grid",
+    "flex",
+    "flexbox",
+    "flexible",
+    "grid",
+    "layout"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ],
+  "license": "MIT"
+}
