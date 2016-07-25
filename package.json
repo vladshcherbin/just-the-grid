@@ -1,6 +1,19 @@
 {
   "name": "just-the-grid",
   "version": "1.0.0",
+  "description": "Just a handy flex grid to build any layout you want.",
+  "files": [
+    "*.md",
+    "dist",
+    "scss"
+  ],
+  "main": "dist/just-the-grid.min.css",
+  "repository": "VladShcherbin/just-the-grid",
+  "homepage": "https://just-the-grid.xyz",
+  "bugs": "https://github.com/VladShcherbin/just-the-grid/issues",
+  "scripts": {
+    "prepublish": "gulp"
+  },
   "author": "Vlad Shcherbin <vlad.shcherbin@gmail.com>",
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -10,5 +23,19 @@
     "gulp-sass": "^2.3.1",
     "gulp-size": "^2.1.0"
   },
+  "tags": [
+    "just-the-grid",
+    "flex",
+    "flexbox",
+    "grid"
+  ],
+  "keywords": [
+    "just-the-grid",
+    "flex",
+    "flexbox",
+    "flexible",
+    "grid",
+    "layout"
+  ],
   "license": "MIT"
 }
