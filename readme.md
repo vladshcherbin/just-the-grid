@@ -44,7 +44,7 @@ Here is the list of classes:
 
 ### Offsets
 
-**.col-..-offset-..
+**.col-..-offset-..**
 
 ### Direction
 
