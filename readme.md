@@ -48,9 +48,9 @@ Here is the list of classes:
 
 ### Direction
 
-**.normal-..** (default behaviour | sm and up)
+**.row-..** (default behaviour | sm and up)
 
-**.reverse-..**
+**.row-reverse-..**
 
 **.column-..**
 
