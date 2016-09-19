@@ -485,9 +485,9 @@
 }
 
 .last-xs {
-  -webkit-box-ordinal-group: 0;
-  -ms-flex-order: -1;
-  order: -1;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
 }
 
 .hidden-xs-up {
@@ -603,9 +603,9 @@
     order: -1;
   }
   .last-sm {
-    -webkit-box-ordinal-group: 0;
-    -ms-flex-order: -1;
-    order: -1;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
   }
   .hidden-sm-up {
     display: none;
@@ -721,9 +721,9 @@
     order: -1;
   }
   .last-md {
-    -webkit-box-ordinal-group: 0;
-    -ms-flex-order: -1;
-    order: -1;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
   }
   .hidden-md-up {
     display: none;
@@ -839,9 +839,9 @@
     order: -1;
   }
   .last-lg {
-    -webkit-box-ordinal-group: 0;
-    -ms-flex-order: -1;
-    order: -1;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
   }
   .hidden-lg {
     display: none;

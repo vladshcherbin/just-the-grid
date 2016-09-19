@@ -1,6 +1,6 @@
 {
   "name": "just-the-grid",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Just a handy flex grid to build any layout you want.",
   "files": [
     "*.md",
