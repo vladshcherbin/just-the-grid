@@ -1,59 +1,70 @@
 // Rows
 //
 // Alignment
-@mixin row-alignment($className) {
+@mixin row-alignment($class-name) {
   // Main axis
-  @if ($className != "xs") {
-    &.start-#{$className} {
+  @if ($class-name != 'xs') {
+    &.start-#{$class-name} {
       justify-content: flex-start;
     }
   }
-  &.center-#{$className} {
+
+  &.center-#{$class-name} {
     justify-content: center;
   }
-  &.end-#{$className} {
+
+  &.end-#{$class-name} {
     justify-content: flex-end;
   }
-  &.around-#{$className} {
+
+  &.around-#{$class-name} {
     justify-content: space-around;
   }
-  &.between-#{$className} {
+
+  &.between-#{$class-name} {
     justify-content: space-between;
   }
 
   // Cross axis
-  @if ($className != "xs") {
-    &.stretch-#{$className} {
+  @if ($class-name != 'xs') {
+    &.stretch-#{$class-name} {
       align-items: stretch;
     }
   }
-  &.baseline-#{$className} {
+
+  &.baseline-#{$class-name} {
     align-items: baseline;
   }
-  &.top-#{$className} {
+
+  &.top-#{$class-name} {
     align-items: flex-start;
   }
-  &.middle-#{$className} {
+
+  &.middle-#{$class-name} {
     align-items: center;
   }
-  &.bottom-#{$className} {
+
+  &.bottom-#{$class-name} {
     align-items: flex-end;
   }
 }
 // Direction
-@mixin row-direction($className) {
-  @if ($className != "xs") {
-    &.row-#{$className} {
+@mixin row-direction($class-name) {
+  @if ($class-name != 'xs') {
+    &.row-#{$class-name} {
       flex-direction: row;
     }
   }
-  &.row-reverse-#{$className} {
+
+  &.row-reverse-#{$class-name} {
     flex-direction: row-reverse;
   }
-  &.column-#{$className} {
+
+  &.column-#{$class-name} {
     flex-direction: column;
   }
-  &.column-reverse-#{$className} {
+
+  &.column-reverse-#{$class-name} {
     flex-direction: column-reverse;
   }
 }
@@ -61,36 +72,37 @@
 // Columns
 //
 // Width
-@mixin columns-width($className) {
+@mixin columns-width($class-name) {
   @for $i from 1 through 12 {
-    .col-#{$className}-#{$i} {
+    .col-#{$class-name}-#{$i} {
       flex-basis: percentage($i / $grid-columns);
       max-width: percentage($i / $grid-columns);
     }
   }
 }
 // Offset
-@mixin columns-offset($className) {
+@mixin columns-offset($class-name) {
   @for $i from 0 through 11 {
-    @if ($className != "xs" or $i != 0) {
-      .col-#{$className}-offset-#{$i} {
+    @if ($class-name != 'xs' or $i != 0) {
+      .col-#{$class-name}-offset-#{$i} {
         margin-left: percentage($i / $grid-columns);
       }
     }
   }
 }
 // Order
-@mixin columns-order($className) {
-  &.first-#{$className} {
+@mixin columns-order($class-name) {
+  &.first-#{$class-name} {
     order: -1;
   }
-  &.last-#{$className} {
+
+  &.last-#{$class-name} {
     order: 1;
   }
 }
 // Visibility
-@mixin columns-hidden($className) {
-  &.hidden-#{$className} {
+@mixin columns-hidden($class-name) {
+  &.hidden-#{$class-name} {
     display: none;
   }
 }
@@ -104,41 +116,41 @@
 
   #{$list} {
     flex: 0 0 auto;
-    padding-left: ($grid-gutter-width / 2);
     padding-right: ($grid-gutter-width / 2);
+    padding-left: ($grid-gutter-width / 2);
     box-sizing: border-box;
   }
 
-  @include columns-width("xs");
-  @include columns-offset("xs");
-  @include columns-order("xs");
-  @include columns-hidden("xs-up");
+  @include columns-width('xs');
+  @include columns-offset('xs');
+  @include columns-order('xs');
+  @include columns-hidden('xs-up');
 
   @media (max-width: $screen-xs-max) {
     @include columns-hidden('xs');
   }
   @media (min-width: $screen-sm-min) {
-    @include columns-width("sm");
-    @include columns-offset("sm");
-    @include columns-order("sm");
-    @include columns-hidden("sm-up");
+    @include columns-width('sm');
+    @include columns-offset('sm');
+    @include columns-order('sm');
+    @include columns-hidden('sm-up');
   }
   @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
     @include columns-hidden('sm');
   }
   @media (min-width: $screen-md-min) {
-    @include columns-width("md");
-    @include columns-offset("md");
-    @include columns-order("md");
-    @include columns-hidden("md-up");
+    @include columns-width('md');
+    @include columns-offset('md');
+    @include columns-order('md');
+    @include columns-hidden('md-up');
   }
   @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
     @include columns-hidden('md');
   }
   @media (min-width: $screen-lg-min) {
-    @include columns-width("lg");
-    @include columns-offset("lg");
-    @include columns-order("lg");
-    @include columns-hidden("lg");
+    @include columns-width('lg');
+    @include columns-offset('lg');
+    @include columns-order('lg');
+    @include columns-hidden('lg');
   }
 }

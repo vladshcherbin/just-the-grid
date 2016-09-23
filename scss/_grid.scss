@@ -21,15 +21,15 @@
 
 // Rows
 .row {
+  @include row-alignment('xs');
+  @include row-direction('xs');
+
   display: flex;
   flex: 0 1 auto;
   flex-flow: row wrap;
   margin-right: ($grid-gutter-width / -2);
   margin-left: ($grid-gutter-width / -2);
   box-sizing: border-box;
-
-  @include row-alignment('xs');
-  @include row-direction('xs');
 
   @media (min-width: $screen-sm-min) {
     @include row-alignment('sm');
