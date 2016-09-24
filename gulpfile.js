@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 gulp.task('default', ['compile', 'minify']);
 
 gulp.task('watch', function () {
-  gulp.watch('scss/*.scss', ['compile', 'minify']);
+  gulp.watch('scss/**/*.scss', ['compile', 'minify']);
 });
 
 gulp.task('compile', function () {
