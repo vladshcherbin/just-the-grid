@@ -10,6 +10,8 @@
   // Columns
   @for $i from 1 through 12 {
     %col-#{$title}-#{$i} {
+      @extend %column;
+
       @include media-query($title) {
         flex-basis: percentage($i / $grid-columns);
         max-width: percentage($i / $grid-columns);
@@ -84,16 +86,6 @@
 }
 
 // Mixins
-@mixin columns {
-  @each $title, $width in $breakpoints {
-    @for $i from 1 through 12 {
-      .col-#{$title}-#{$i} {
-        @extend %column;
-      }
-    }
-  }
-}
-
 @mixin columns-width {
   @each $title, $width in $breakpoints {
     @for $i from 1 through 12 {
@@ -139,7 +131,6 @@
 }
 
 @mixin generate-columns {
-  @include columns;
   @include columns-width;
   @include columns-offset;
   @include columns-order;
