@@ -16,12 +16,6 @@ There are several options, how you can install the grid:
 npm i just-the-grid --save
 ```
 
-**Bower**
-
-```bash
-bower install just-the-grid
-```
-
 **GitHub**
 
 [GitHub](https://github.com/VladShcherbin/just-the-grid)
