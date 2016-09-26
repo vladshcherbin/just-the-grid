@@ -12,13 +12,15 @@
   "homepage": "https://just-the-grid.xyz",
   "bugs": "https://github.com/VladShcherbin/just-the-grid/issues",
   "scripts": {
-    "lint": "sass-lint 'scss/*.scss' -v",
+    "lint": "sass-lint 'scss/**/*.scss' -v",
     "prepublish": "gulp"
   },
   "author": "Vlad Shcherbin <vlad.shcherbin@gmail.com>",
   "devDependencies": {
+    "group-css-media-queries": "^1.4.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.12",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.0",
     "gulp-sass": "^2.3.1",

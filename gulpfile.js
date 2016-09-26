@@ -3,7 +3,9 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     notify = require('gulp-notify'),
     rename = require('gulp-rename'),
-    size = require('gulp-size');
+    size = require('gulp-size'),
+    gcmq = require('gulp-group-css-media-queries'),
+    cleanCSS = require('gulp-clean-css');
 
 gulp.task('default', ['compile', 'minify']);
 
@@ -20,6 +22,7 @@ gulp.task('compile', function () {
         precision: 10
       }))
       .on('error', notify.onError('<%= error.message %>'))
+      .pipe(gcmq())
       .pipe(prefix({
         browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
         cascade: false
@@ -39,16 +42,8 @@ gulp.task('compile', function () {
 gulp.task('minify', function () {
   var compressed = size();
   var gzipped = size({gzip: true});
-  gulp.src('scss/*.scss')
-      .pipe(sass({
-        outputStyle: 'compressed',
-        precision: 10
-      }))
-      .on('error', notify.onError('<%= error.message %>'))
-      .pipe(prefix({
-        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
-        cascade: false
-      }))
+    gulp.src('dist/*[^.min].css')
+      .pipe(cleanCSS())
       .pipe(rename({
         dirname: '',
         suffix: '.min'
