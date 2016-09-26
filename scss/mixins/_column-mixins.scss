@@ -46,42 +46,42 @@
 
 // Visibility
 %hidden-xs-up {
-  display: none;
+  display: none !important;
 }
 
 %hidden-xs {
   @media (max-width: $screen-xs-max) {
-    display: none;
+    display: none !important;
   }
 }
 
 %hidden-sm-up {
   @media (min-width: $screen-sm-min) {
-    display: none;
+    display: none !important;
   }
 }
 
 %hidden-sm {
   @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    display: none;
+    display: none !important;
   }
 }
 
 %hidden-md-up {
   @media (min-width: $screen-md-min) {
-    display: none;
+    display: none !important;
   }
 }
 
 %hidden-md {
   @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    display: none;
+    display: none !important;
   }
 }
 
 %hidden-lg {
   @media (min-width: $screen-lg-min) {
-    display: none;
+    display: none !important;
   }
 }
 
