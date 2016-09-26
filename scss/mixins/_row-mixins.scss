@@ -1,0 +1,172 @@
+// Placeholders
+%row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+  margin-right: ($grid-gutter-width / -2);
+  margin-left: ($grid-gutter-width / -2);
+  box-sizing: border-box;
+}
+
+@each $title, $width in $breakpoints {
+  // Alignment
+  // Horizontal
+  %align-#{$title}-start {
+    @include media-query($title) {
+      justify-content: flex-start;
+    }
+  }
+
+  %align-#{$title}-center {
+    @include media-query($title) {
+      justify-content: center;
+    }
+  }
+
+  %align-#{$title}-end {
+    @include media-query($title) {
+      justify-content: flex-end;
+    }
+  }
+
+  %align-#{$title}-around {
+    @include media-query($title) {
+      justify-content: space-around;
+    }
+  }
+
+  %align-#{$title}-between {
+    @include media-query($title) {
+      justify-content: space-between;
+    }
+  }
+
+  // Vertical
+  %align-#{$title}-stretch {
+    @include media-query($title) {
+      align-items: stretch;
+    }
+  }
+
+  %align-#{$title}-baseline {
+    @include media-query($title) {
+      align-items: baseline;
+    }
+  }
+
+  %align-#{$title}-top {
+    @include media-query($title) {
+      align-items: flex-start;
+    }
+  }
+
+  %align-#{$title}-middle {
+    @include media-query($title) {
+      align-items: center;
+    }
+  }
+
+  %align-#{$title}-bottom {
+    @include media-query($title) {
+      align-items: flex-end;
+    }
+  }
+
+  // Direction
+  %direction-#{$title}-row {
+    @include media-query($title) {
+      flex-direction: row;
+    }
+  }
+
+  %direction-#{$title}-row-reverse {
+    @include media-query($title) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  %direction-#{$title}-column {
+    @include media-query($title) {
+      flex-direction: column;
+    }
+  }
+
+  %direction-#{$title}-column-reverse {
+    @include media-query($title) {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+// Mixins
+@mixin row-alignment {
+  @each $title, $width in $breakpoints {
+    // Main axis
+    @if ($title != 'xs') {
+      .align-#{$title}-start {
+        @extend %align-#{$title}-start;
+      }
+    }
+
+    .align-#{$title}-center {
+      @extend %align-#{$title}-center;
+    }
+
+    .align-#{$title}-end {
+      @extend %align-#{$title}-end;
+    }
+
+    .align-#{$title}-around {
+      @extend %align-#{$title}-around;
+    }
+
+    .align-#{$title}-between {
+      @extend %align-#{$title}-between;
+    }
+
+    // Cross axis
+    @if ($title != 'xs') {
+      .align-#{$title}-stretch {
+        @extend %align-#{$title}-stretch;
+      }
+    }
+
+    .align-#{$title}-baseline {
+      @extend %align-#{$title}-baseline;
+    }
+
+    .align-#{$title}-top {
+      @extend %align-#{$title}-top;
+    }
+
+    .align-#{$title}-middle {
+      @extend %align-#{$title}-middle;
+    }
+
+    .align-#{$title}-bottom {
+      @extend %align-#{$title}-bottom;
+    }
+  }
+}
+
+@mixin row-direction {
+  @each $title, $width in $breakpoints {
+    @if ($title != 'xs') {
+      .direction-#{$title}-row {
+        @extend %direction-#{$title}-row;
+      }
+    }
+
+    .direction-#{$title}-row-reverse {
+      @extend %direction-#{$title}-row-reverse;
+    }
+
+    .direction-#{$title}-column {
+      @extend %direction-#{$title}-column;
+    }
+
+    .direction-#{$title}-column-reverse {
+      @extend %direction-#{$title}-column-reverse;
+    }
+  }
+}

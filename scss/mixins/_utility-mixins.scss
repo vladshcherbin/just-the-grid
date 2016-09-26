@@ -1,0 +1,9 @@
+@mixin media-query($title) {
+  @if $title == 'xs' {
+    @content;
+  } @else {
+    @media (min-width: map-get($breakpoints, $title)) {
+      @content;
+    }
+  }
+}

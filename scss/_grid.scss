@@ -1,49 +1,16 @@
-// Containers
-.container,
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: ($grid-gutter-width / 2);
-  padding-left: ($grid-gutter-width / 2);
-}
-
 .container {
-  @media (min-width: $screen-sm-min) {
-    width: $container-sm;
-  }
-  @media (min-width: $screen-md-min) {
-    width: $container-md;
-  }
-  @media (min-width: $screen-lg-min) {
-    width: $container-lg;
-  }
+  @extend %container;
 }
 
-// Rows
+.container-fluid {
+  @extend %container-fluid;
+}
+
 .row {
-  @include row-alignment('xs');
-  @include row-direction('xs');
-
-  display: flex;
-  flex: 0 1 auto;
-  flex-flow: row wrap;
-  margin-right: ($grid-gutter-width / -2);
-  margin-left: ($grid-gutter-width / -2);
-  box-sizing: border-box;
-
-  @media (min-width: $screen-sm-min) {
-    @include row-alignment('sm');
-    @include row-direction('sm');
-  }
-  @media (min-width: $screen-md-min) {
-    @include row-alignment('md');
-    @include row-direction('md');
-  }
-  @media (min-width: $screen-lg-min) {
-    @include row-alignment('lg');
-    @include row-direction('lg');
-  }
+  @extend %row;
 }
 
-// Columns
+@include row-alignment;
+@include row-direction;
+
 @include generate-columns;

@@ -1,0 +1,147 @@
+// Placeholders
+%column {
+  flex: 0 0 auto;
+  padding-right: ($grid-gutter-width / 2);
+  padding-left: ($grid-gutter-width / 2);
+  box-sizing: border-box;
+}
+
+@each $title, $width in $breakpoints {
+  // Columns
+  @for $i from 1 through 12 {
+    %col-#{$title}-#{$i} {
+      @include media-query($title) {
+        flex-basis: percentage($i / $grid-columns);
+        max-width: percentage($i / $grid-columns);
+      }
+    }
+  }
+
+  // Offsets
+  @for $i from 0 through 11 {
+    @if ($title != 'xs' or $i != 0) {
+      %offset-#{$title}-#{$i} {
+        @include media-query($title) {
+          margin-left: percentage($i / $grid-columns);
+        }
+      }
+    }
+  }
+
+  // Ordering
+  %order-#{$title}-first {
+    @include media-query($title) {
+      order: -1;
+    }
+  }
+
+  %order-#{$title}-last {
+    @include media-query($title) {
+      order: 1;
+    }
+  }
+}
+
+// Visibility
+%hidden-xs-up {
+  display: none;
+}
+
+%hidden-xs {
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+}
+
+%hidden-sm-up {
+  @media (min-width: $screen-sm-min) {
+    display: none;
+  }
+}
+
+%hidden-sm {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+%hidden-md-up {
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+%hidden-md {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: none;
+  }
+}
+
+%hidden-lg {
+  @media (min-width: $screen-lg-min) {
+    display: none;
+  }
+}
+
+// Mixins
+@mixin columns {
+  @each $title, $width in $breakpoints {
+    @for $i from 1 through 12 {
+      .col-#{$title}-#{$i} {
+        @extend %column;
+      }
+    }
+  }
+}
+
+@mixin columns-width {
+  @each $title, $width in $breakpoints {
+    @for $i from 1 through 12 {
+      .col-#{$title}-#{$i} {
+        @extend %col-#{$title}-#{$i};
+      }
+    }
+  }
+}
+
+@mixin columns-offset {
+  @each $title, $width in $breakpoints {
+    @for $i from 0 through 11 {
+      @if ($title != 'xs' or $i != 0) {
+        .offset-#{$title}-#{$i} {
+          @extend %offset-#{$title}-#{$i};
+        }
+      }
+    }
+  }
+}
+
+@mixin columns-order {
+  @each $title, $width in $breakpoints {
+    .order-#{$title}-first {
+      @extend %order-#{$title}-first;
+    }
+
+    .order-#{$title}-last {
+      @extend %order-#{$title}-last;
+    }
+  }
+}
+
+@mixin columns-visibility {
+  $sizes: 'xs-up', 'xs', 'sm-up', 'sm', 'md-up', 'md', 'lg';
+
+  @each $size in $sizes {
+    .hidden-#{$size} {
+      @extend %hidden-#{$size};
+    }
+  }
+}
+
+@mixin generate-columns {
+  @include columns;
+  @include columns-width;
+  @include columns-offset;
+  @include columns-order;
+  @include columns-visibility;
+}
