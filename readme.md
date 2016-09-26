@@ -36,55 +36,57 @@ Here is the list of classes:
 
 **.container-fluid**
 
-### Rows and Columns
+### Rows
 
 **.row**
+
+#### Direction
+
+**.direction-..-row** (default behaviour | sm and up)
+
+**.direction-..-row-reverse**
+
+**.direction-..-column**
+
+**.direction-..-column-reverse**
+
+#### Main Axis Alignment
+
+**.align-..-start** (default behaviour | sm and up)
+
+**.align-..-center**
+
+**.align-..-end**
+
+**.align-..-around**
+
+**.align-..-between**
+
+#### Cross Axis Alignment
+
+**.align-..-stretch** (default behaviour | sm and up)
+
+**.align-..-baseline**
+
+**.align-..-top**
+
+**.align-..-middle**
+
+**.align-..-bottom**
+
+### Columns
 
 **.col-(xs | sm | md | lg)-(1 - 12)**
 
 ### Offsets
 
-**.col-..-offset-..**
-
-### Direction
-
-**.row-..** (default behaviour | sm and up)
-
-**.row-reverse-..**
-
-**.column-..**
-
-**.column-reverse-..**
-
-### Main Axis Alignment
-
-**.start-..** (default behaviour | sm and up)
-
-**.center-..**
-
-**.end-..**
-
-**.between-..**
-
-**.around-..**
-
-### Cross Axis Alignment
-
-**.stretch-..** (default behaviour | sm and up)
-
-**.top-..**
-
-**.middle-..**
-
-**.bottom-..**
-
-**.baseline-..**
+**.offset-(xs | sm | md | lg)-(0 - 12)**
 
 ### Ordering
 
-**.first-..**
+**.order-..-first**
 
-**.last-..**
+**.order-..-last**
 
 ### Visibility
 
