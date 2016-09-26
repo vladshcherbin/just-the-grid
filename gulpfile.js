@@ -45,7 +45,10 @@ gulp.task('minify', function () {
         precision: 10
       }))
       .on('error', notify.onError('<%= error.message %>'))
-      .pipe(prefix('> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'))
+      .pipe(prefix({
+        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
+        cascade: false
+      }))
       .pipe(rename({
         dirname: '',
         suffix: '.min'
