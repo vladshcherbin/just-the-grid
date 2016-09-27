@@ -6,10 +6,6 @@
   @extend %container-fluid;
 }
 
-.row {
-  @extend %row;
-}
-
 @include row-alignment;
 @include row-direction;
 
