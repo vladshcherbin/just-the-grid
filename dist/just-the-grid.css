@@ -1,5 +1,6 @@
 .container,
-.container-fluid {
+.container-fluid,
+.container-nested {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -275,7 +276,7 @@
 
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    max-width: 750px;
   }
 
   .align-sm-start {
@@ -509,7 +510,7 @@
 
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    max-width: 970px;
   }
 
   .align-md-start {
@@ -743,7 +744,7 @@
 
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    max-width: 1170px;
   }
 
   .align-lg-start {
