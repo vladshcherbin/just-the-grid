@@ -1,11 +1,9 @@
 // Placeholders
 %container-fluid {
-  display: flex;
-  flex: 0 1 auto;
-  flex-flow: row wrap;
   margin-right: auto;
   margin-left: auto;
-  box-sizing: border-box;
+  padding-right: ($grid-gutter-width / 2);
+  padding-left: ($grid-gutter-width / 2);
 }
 
 %container {

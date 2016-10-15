@@ -2,9 +2,12 @@
   @extend %container;
 }
 
-.container-fluid,
-.container-nested {
+.container-fluid {
   @extend %container-fluid;
+}
+
+.row {
+  @extend %row;
 }
 
 @include row-alignment;

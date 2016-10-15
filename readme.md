@@ -30,6 +30,10 @@ Here is the list of classes:
 
 **.container-fluid**
 
+### Rows
+
+**.row**
+
 #### Direction
 
 **.direction-..-row** (default behaviour | sm and up)
